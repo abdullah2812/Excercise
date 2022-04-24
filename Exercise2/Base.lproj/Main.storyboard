@@ -75,35 +75,28 @@
                                 </subviews>
                                 <variation key="heightClass=regular" alignment="center"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="OZy-Ov-EmW">
-                                <rect key="frame" x="41" y="779" width="332" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-XN-x1v">
+                                <rect key="frame" x="20" y="782" width="374" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO8-wk-QA9">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZq-h0-p2I">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="40"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Mr3-EB-xb6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <state key="normal" title="Sign Up">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-an-Hc6">
-                                        <rect key="frame" x="182" y="0.0" width="150" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLv-ZA-STe">
+                                        <rect key="frame" x="195" y="0.0" width="179" height="40"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="3vY-n8-tAm"/>
-                                            <constraint firstAttribute="width" constant="150" id="rMz-me-fy0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="332" id="MC9-Yo-CRs"/>
+                                    <constraint firstAttribute="height" constant="40" id="Zkj-F8-UHw"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -112,16 +105,16 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="dnS-5P-YRN" secondAttribute="bottom" id="1xZ-kH-Z6q"/>
                             <constraint firstItem="fzE-qp-aZj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2B1-mE-bmj"/>
+                            <constraint firstItem="d1h-XN-x1v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AaM-PK-rmH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d1h-XN-x1v" secondAttribute="bottom" constant="40" id="KXA-r3-IMU"/>
                             <constraint firstItem="fzE-qp-aZj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Pj4-1Z-dGm"/>
                             <constraint firstItem="fzE-qp-aZj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Vzg-Ct-cA5"/>
                             <constraint firstAttribute="trailing" secondItem="dnS-5P-YRN" secondAttribute="trailing" id="Xjv-Lg-B6l"/>
                             <constraint firstItem="dnS-5P-YRN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yid-iz-fvU"/>
-                            <constraint firstItem="OZy-Ov-EmW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bTS-yc-9Jm"/>
+                            <constraint firstItem="d1h-XN-x1v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gyy-uv-Z3q"/>
                             <constraint firstItem="dnS-5P-YRN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mIP-u8-efA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fzE-qp-aZj" secondAttribute="trailing" constant="10" id="p2s-9t-42e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OZy-Ov-EmW" secondAttribute="bottom" constant="43" id="pPt-2W-fcw">
-                                <variation key="heightClass=compact" constant="5"/>
-                            </constraint>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1h-XN-x1v" secondAttribute="trailing" constant="20" id="x2k-e1-kMb"/>
                         </constraints>
                     </view>
                 </viewController>
