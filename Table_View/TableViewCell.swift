@@ -21,6 +21,7 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         img.layer.cornerRadius = 15
         img.layer.masksToBounds = true
+        
         // Initialization code
     }
 

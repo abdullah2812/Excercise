@@ -23,6 +23,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
+        tableView.separatorStyle = .none
         
         var snapShoot = NSDiffableDataSourceSnapshot<Section,String>()
         snapShoot.appendSections([.all])
