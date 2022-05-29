@@ -17,11 +17,14 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblType: UILabel!
     
+    @IBOutlet weak var imaFav: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         img.layer.cornerRadius = 15
         img.layer.masksToBounds = true
-        
+        self.tintColor = .blue
         // Initialization code
     }
 

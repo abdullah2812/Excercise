@@ -17,6 +17,10 @@ class TableViewController: UITableViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", " British", "Thai"]
     
+    var restaurantIsFavorite = Array(repeating: false, count: 21)
+    
+    var restaurantIsVisited = [false, false, false, false, false, false, false , false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    
     lazy var dataSource = configureDataSource()
 
     override func viewDidLoad() {
@@ -31,13 +35,45 @@ class TableViewController: UITableViewController {
         
         dataSource.apply(snapShoot, animatingDifferences: false)
         
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let alert = UIAlertController(title: nil, message: "What do you do?", preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let reserveActionHandler = {(action:UIAlertAction!) -> Void in
+            let alertMassage = UIAlertController(title: "Not Available yer", message: "Sorry, this feature is not available yet.", preferredStyle: .alert)
+            alertMassage.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alertMassage, animated: true, completion: nil)
+        }
+        let reserveAction = UIAlertAction(title: "Reserve Table", style: .default, handler: reserveActionHandler)
+        alert.addAction(reserveAction)
+        alert.addAction(cancel)
+        
+        
+        // action image
+        let actionFavorit = self.restaurantIsFavorite[indexPath.row] ? "Remove from favorite" : "Mark as favorite"
+        let favorit = UIAlertAction(title: actionFavorit, style: .default, handler: {(action:UIAlertAction!) -> Void in
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        
+        cell.imaFav.isHidden = self.restaurantIsFavorite[indexPath.row]
+        self.restaurantIsFavorite[indexPath.row] = self.restaurantIsFavorite[indexPath.row] ? false : true
+                                    
+        })
+        alert.addAction(favorit)
+    
+        present(alert, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
+    
     enum Section {
         case all
     }
     
-    func configureDataSource()-> UITableViewDiffableDataSource<Section,String>{
+    func configureDataSource() -> UITableViewDiffableDataSource<Section,String>{
         let cellIdentiIdentifier = "dataCell"
         let dataSource = UITableViewDiffableDataSource<Section,String>(
             tableView: tableView, cellProvider: {
@@ -48,6 +84,8 @@ class TableViewController: UITableViewController {
                 cell.lblName.text = restaurantNames
                 cell.lblLocation.text = self.restaurantLocations[indexPath.row]
                 cell.lblType.text = self.restaurantTypes[indexPath.row]
+//                cell.accessoryType = self.restaurantIsFavorite[indexPath.row] ?.checkmark : .none
+                cell.imaFav.isHidden = self.restaurantIsFavorite[indexPath.row] ? false:true
                 return cell
             }
         )
